@@ -1,0 +1,49 @@
+@import "src/styles/util";
+
+button {
+  background-color: $masc-layout-contrast;
+  border: $masc-layout solid 2px;
+  color: $masc-layout;
+  font-weight: bolder;
+  padding: .5em 1em;
+  text-align: center;
+  text-decoration: none;
+}
+
+button:active {
+  background-color: $masc-layout;
+  color: $masc-layout-contrast;
+}
+
+button:hover {
+  filter: brightness(90%);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  filter: brightness(80%);
+}
+
+.style-primary {
+  color: $masc-primary;
+}
+
+.style-secondary {
+  color: $masc-secondary;
+}
+
+.style-subsidiary {
+  color: $masc-subsidiary;
+}
+
+.style-success {
+  color: $masc-success;
+}
+
+.style-warn {
+  color: $masc-warn;
+}
+
+.style-danger {
+  color: $masc-danger;
+}

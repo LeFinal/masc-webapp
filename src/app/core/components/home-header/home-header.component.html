@@ -1,0 +1,15 @@
+<div class="centered">
+  <div class="branding-and-apps">
+    <div class="apps clickable" [routerLink]="['/']">
+      <span class="material-icons">apps</span>
+    </div>
+    <app-logo class="logo"></app-logo>
+  </div>
+</div>
+<div class="centered">
+  <app-communication-state [state]="communicationState"></app-communication-state>
+</div>
+<div class="clock">
+  <div *ngIf="time" class="hour-minutes">{{ time | date: 'HH:mm' }}</div>
+  <div *ngIf="time" class="seconds">{{ time | date: 'ss' }}</div>
+</div>

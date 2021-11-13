@@ -1,0 +1,26 @@
+@import "corporate";
+@import "theming";
+
+// Makes the cursor a pointer.
+.clickable {
+  cursor: pointer;
+}
+
+// Animates an pulsating opacity.
+.anim-breathe {
+  animation: animBreathe 1.5s ease-out infinite normal;
+}
+
+@keyframes animBreathe {
+  0% {
+    opacity: 50%;
+  }
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 50%;
+  }
+}

@@ -1,0 +1,47 @@
+@import "src/styles/util";
+
+.apps {
+  padding: 16px;
+}
+
+.logo {
+  font-size: 2em;
+}
+
+.branding-and-apps {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.centered {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.clock {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8px;
+  margin-right: 8px;
+}
+
+.clock .hour-minutes {
+  font-size: 1.6em;
+}
+
+.clock .seconds {
+  color: $masc-subsidiary;
+}
+
+:host {
+  background-color: $masc-header-bg;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3em;
+  width: 100%;
+}

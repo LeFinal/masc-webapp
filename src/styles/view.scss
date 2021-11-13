@@ -1,0 +1,27 @@
+:host {
+  flex-grow: 1;
+}
+
+.view {
+  padding: 10px;
+}
+
+.view-full {
+  @extend .view;
+  padding: 16px;
+}
+
+.view-header-info {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.view-header-info h1 {
+  margin: 0;
+}
+
+.view-header-info div {
+  color: gray;
+}

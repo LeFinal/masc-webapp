@@ -1,0 +1,4 @@
+<div class="connecting anim-breathe" *ngIf="state === communicationState.Connecting">connecting</div>
+<div class="authenticating anim-breathe" *ngIf="state === communicationState.Authenticating">authenticating</div>
+<div class="connected" *ngIf="state === communicationState.Connected">connected</div>
+<div class="disconnected" *ngIf="state === communicationState.Disconnected">disconnected</div>

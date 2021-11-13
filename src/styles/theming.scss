@@ -1,0 +1,43 @@
+@import "corporate";
+
+.style-primary {
+}
+
+.style-secondary {
+}
+
+.style-subsidiary {
+}
+
+.style-success {
+}
+
+.style-warn {
+}
+
+.style-danger {
+}
+
+span.style-primary {
+  color: $masc-primary;
+}
+
+span.style-secondary {
+  color: $masc-secondary;
+}
+
+span.style-subsidiary {
+  color: $masc-subsidiary;
+}
+
+span.style-success {
+  color: $masc-success;
+}
+
+span.style-warn {
+  color: $masc-warn;
+}
+
+span.style-danger {
+  color: $masc-danger;
+}

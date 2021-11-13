@@ -1,0 +1,40 @@
+@import "src/styles/util";
+
+div {
+  visibility: hidden;
+  animation: animFadeIn 500ms forwards;
+  animation-delay: 900ms;
+}
+
+.disconnected {
+  color: $masc-danger;
+}
+
+.connected {
+  color: $masc-success;
+  visibility: visible;
+  animation: animFadeOut 1s forwards;
+  animation-delay: 500ms;
+}
+
+@keyframes animFadeIn {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 100%;
+    visibility: visible;
+  }
+}
+
+@keyframes animFadeOut {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
