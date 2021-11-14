@@ -8,7 +8,7 @@
   <p>You need to refresh the page after changing roles for applying changes.</p>
   <app-button (click)="saveRoles()">Save</app-button>
   <h1>Clear Identity</h1>
-  <p>Current Identity: <span class="style-secondary">{{ identity ? identity : 'None' }}</span></p>
+  <p>Current Identity: <span class="style-primary">{{ identity ? identity : 'None' }}</span></p>
   <p>Use with caution! This will delete the current identity and associated information with it.</p>
   <app-button color="danger" (click)="clearIdentity()" [disabled]="!identity">Clear Identity</app-button>
 </div>

@@ -1,1 +1,27 @@
-<p>app-device-management-view works!</p>
+<div class="view-full" *ngIf="hired">
+  <h1>Device Management</h1>
+  Manage, rename and forget devices.
+  <h2>Known Devices</h2>
+  <app-refresh-button (click)="refreshDevices()"></app-refresh-button>
+  <ng-container *ngIf="deviceList">
+    <table class="table-basic" aria-label="Device table">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Self description</th>
+        <th scope="col">Last seen</th>
+        <th scope="col">Connected?</th>
+      </tr>
+      <tr (click)="editDevice(device)"
+          *ngFor="let device of deviceList"
+          class="clickable-layout">
+        <td>{{ device.name }}</td>
+        <td>{{ device.self_description }}</td>
+        <td>{{ device.last_seen | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>
+          <app-app-device-management-connected-state [connected]="device.is_connected">
+          </app-app-device-management-connected-state>
+        </td>
+      </tr>
+    </table>
+  </ng-container>
+</div>

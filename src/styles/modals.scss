@@ -1,0 +1,75 @@
+@import "src/styles/util";
+
+.modal {
+  backdrop-filter: brightness(50%);
+
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  text-align: center;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.fade-anim {
+  will-change: opacity;
+  opacity: 0;
+}
+
+.modal.fade-anim.in {
+  opacity: 100%;
+}
+
+.modal .draggable {
+  display: block;
+  position: relative;
+}
+
+.modal .draggable .handle {
+  cursor: move;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-content {
+  background-color: $masc-layout-contrast;
+  border: $masc-layout solid 2px;
+  will-change: opacity;
+  display: inline-block;
+  text-align: left;
+  min-width: 300px;
+}
+
+.modal-content-size-m {
+  max-width: 75%;
+}
+
+.modal-content-size-l {
+  max-width: 90%;
+}
+
+.modal-body, .modal-footer {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.modal-footer {
+  align-items: center;
+  display: flex;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  justify-content: end;
+  gap: 1em;
+}
+
+.modal-body {
+}

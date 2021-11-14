@@ -14,6 +14,7 @@ import { styleClassFromCode, StyleCode } from '../../util/color-codes';
 })
 export class ButtonComponent {
   styleClassFromCode = styleClassFromCode;
-  @Input() color: StyleCode = 'primary';
+  @Input() type: 'button' | 'submit' = 'button';
+  @Input() color: StyleCode = 'base';
   @Input() disabled = false;
 }

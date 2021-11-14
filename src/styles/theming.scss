@@ -1,9 +1,9 @@
 @import "corporate";
 
-.style-primary {
+.style-base {
 }
 
-.style-secondary {
+.style-primary {
 }
 
 .style-subsidiary {
@@ -16,6 +16,10 @@
 }
 
 .style-danger {
+}
+
+span.style-base {
+  color: $masc-base;
 }
 
 span.style-primary {
@@ -40,4 +44,14 @@ span.style-warn {
 
 span.style-danger {
   color: $masc-danger;
+}
+
+// Modals.
+
+.modal.style-warn > .modal-content {
+  border-color: $masc-warn;
+}
+
+.modal.style-danger > .modal-content {
+  border-color: $masc-danger;
 }

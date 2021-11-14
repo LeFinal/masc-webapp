@@ -1,0 +1,11 @@
+@import "src/styles/util.scss";
+
+input {
+  border: $masc-layout solid 2px;
+  border-radius: 0;
+  padding: 4px;
+}
+
+:host {
+  display: block;
+}

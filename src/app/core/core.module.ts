@@ -7,7 +7,13 @@ import { RouterModule } from '@angular/router';
 import { CommunicationStateComponent } from './components/connection-state/communication-state.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { FormsModule } from '@angular/forms';
+import { SubscriptionComponent } from './components/subscription-component';
+import { PromptTextInputModal } from './components/modals/prompt-text-input-modal/prompt-text-input-modal.component';
+import { RoleTypeComponent } from './components/role-type/role-type.component';
+import { RefreshButtonComponent } from './components/refresh-button/refresh-button.component';
 import { ButtonComponent } from './components/button/button.component';
+import { InputComponent } from './components/input/input.component';
+import { ConfirmModal } from './components/modals/confirm-modal/confirm-modal.component';
 
 
 @NgModule({
@@ -18,11 +24,20 @@ import { ButtonComponent } from './components/button/button.component';
     CommunicationStateComponent,
     CheckboxComponent,
     ButtonComponent,
+    SubscriptionComponent,
+    PromptTextInputModal,
+    RoleTypeComponent,
+    RoleTypeComponent,
+    RefreshButtonComponent,
+    InputComponent,
+    ConfirmModal,
   ],
   exports: [
     LogoComponent,
     CheckboxComponent,
     ButtonComponent,
+    RoleTypeComponent,
+    RefreshButtonComponent,
   ],
   imports: [
     CommonModule,

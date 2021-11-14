@@ -5,6 +5,9 @@ import { CoreModule } from './core/core.module';
 import { FeaturesModule } from './features/features.module';
 import { HomeLayoutComponent } from './core/components/home-layout/home-layout.component';
 import { SetRolesViewComponent } from './features/config/set-roles-view/set-roles-view.component';
+import { NotFoundView } from './features/error-handling/not-found-view/not-found-view.component';
+import { AppDeviceManagementView } from './features/app-device-management/app-device-management-view/app-device-management-view.component';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -16,15 +19,28 @@ const routes: Routes = [
         component: DashboardView,
       },
       {
+        path: 'app',
+        children: [
+          {
+            path: 'device-management',
+            component: AppDeviceManagementView,
+          },
+        ],
+      },
+      {
         path: 'set-roles',
         component: SetRolesViewComponent,
+      },
+      {
+        path: '**',
+        component: NotFoundView,
       },
     ],
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), CoreModule, FeaturesModule],
+  imports: [CommonModule, RouterModule.forRoot(routes), CoreModule, FeaturesModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {

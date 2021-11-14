@@ -1,0 +1,13 @@
+@import "corporate";
+
+table.table-basic {
+  border-collapse: collapse;
+
+  &, th, td {
+    border: $masc-layout-secondary solid 1px;
+  }
+
+  th, td {
+    padding: 0.5em;
+  }
+}

@@ -11,6 +11,10 @@ export enum MessageType {
    */
   AreYouReady = 'are-you-ready',
   /**
+   * Used with {@link MessageDeleteDevice} by {@link RoleType.DeviceManager} for deleting a device.
+   */
+  DeleteDevice = 'delete-device',
+  /**
    * DeviceList is used with MessageDeviceList as an answer to
    * GetDevices.
    */
@@ -29,6 +33,16 @@ export enum MessageType {
    * Used with MessageFixtures.
    */
   Fixtures = 'fixtures',
+  /**
+   * FixtureBasicSetState is used for setting the state of
+   * FixtureTypeBasic.
+   */
+  FixtureBasicSetState = 'fixture-basic-set-state',
+  /**
+   * FixtureDimmerSetState is used for setting the state of
+   * FixtureTypeDimmer.
+   */
+  FixtureDimmerSetState = 'fixture-dimmer-set-state',
   /**
    * GetDevices is received when devices are requested.
    */
@@ -106,16 +120,6 @@ export enum MessageType {
    * assignment request was fulfilled.
    */
   RoleAssignments = 'role-assignments',
-  /**
-   * FixtureBasicSetState is used for setting the state of
-   * FixtureTypeBasic.
-   */
-  FixtureBasicSetState = 'fixture-basic-set-state',
-  /**
-   * FixtureDimmerSetState is used for setting the state of
-   * FixtureTypeDimmer.
-   */
-  FixtureDimmerSetState = 'fixture-dimmer-set-state',
   /**
    * Welcome is sent to the client when he is welcomed at the server.
    * Used with MessageWelcome.

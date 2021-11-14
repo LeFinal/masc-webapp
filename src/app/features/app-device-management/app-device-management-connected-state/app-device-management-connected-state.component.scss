@@ -1,0 +1,16 @@
+@import "src/styles/util";
+
+:host > div {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.online .icon {
+  color: $masc-success;
+}
+
+.offline .icon {
+  color: $masc-subsidiary;
+}

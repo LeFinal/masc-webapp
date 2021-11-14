@@ -1,0 +1,30 @@
+@import "src/styles/util";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: $masc-layout solid 1px;
+  border-radius: 8px;
+  padding: 16px;
+  width: 12em;
+  height: 8em;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.icon {
+  font-size: 3em;
+}
+
+.title {
+  font-size: 1.3em;
+}
+
+.description {
+  color: $masc-subsidiary;
+}
+
+:host {
+  display: block;
+}

@@ -1,7 +1,9 @@
-export type StyleCode = 'primary' | 'secondary' | 'subsidiary' | 'success' | 'warn' | 'danger';
+export type StyleCode = 'base' | 'primary' | 'secondary' | 'subsidiary' | 'success' | 'warn' | 'danger';
 
 export function styleClassFromCode(code: StyleCode): string {
   switch (code) {
+    case 'base':
+      return 'style-base';
     case 'primary':
       return 'style-primary';
     case 'secondary':

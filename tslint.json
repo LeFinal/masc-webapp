@@ -124,7 +124,7 @@
     "component-class-suffix": [
       true,
       "Component",
-      "Dialog",
+      "Modal",
       "View"
     ],
     "contextual-lifecycle": true,

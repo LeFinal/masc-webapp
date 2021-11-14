@@ -1,7 +1,10 @@
 <div class="view-full">
   <h1>Apps</h1>
   <div class="apps">
-    <div>app 1</div>
-    <div>app 2</div>
+    <app-dashboard-app *ngIf="hasRoleType(roleType.DeviceManager)"
+                       title="Device Management"
+                       description="Manage, name and remove devices."
+                       icon="devices"
+                       [routerLink]="['/app/device-management']"></app-dashboard-app>
   </div>
 </div>

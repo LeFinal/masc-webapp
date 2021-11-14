@@ -1,0 +1,16 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-body">
+      <h2>{{ title }}</h2>
+      <p>{{ prompt }}</p>
+      <app-input [defaultValue]="defaultValue"
+                 [hint]="hint"
+                 (valueChange)="onValueChange($event)"
+                 class="input"></app-input>
+    </div>
+    <div class="modal-footer">
+      <app-button (click)="close()">Cancel</app-button>
+      <app-button (click)="confirm()" type="submit">Confirm</app-button>
+    </div>
+  </div>
+</div>

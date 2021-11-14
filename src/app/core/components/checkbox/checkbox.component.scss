@@ -27,11 +27,11 @@ input {
 }
 
 label:active {
-  color: $masc-secondary;
+  color: $masc-primary;
 }
 
 input:checked ~ .checkmark {
-  background-color: $masc-primary-contrast;
+  background-color: $masc-base-contrast;
 }
 
 input:hover ~ .checkmark:after {
@@ -54,5 +54,5 @@ input:checked ~ .checkmark:after {
   top: 0.2em;
   width: 0.6em;
   height: 0.6em;
-  background-color: $masc-primary;
+  background-color: $masc-base;
 }

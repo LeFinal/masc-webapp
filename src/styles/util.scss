@@ -6,6 +6,21 @@
   cursor: pointer;
 }
 
+.clickable-layout {
+  @extend .clickable;
+  background-color: $masc-layout-contrast;
+  color: $masc-layout;
+}
+
+.clickable-layout:hover {
+  filter: brightness(95%);
+}
+
+.clickable-layout:active {
+  background-color: $masc-layout;
+  color: $masc-layout-contrast;
+}
+
 // Animates an pulsating opacity.
 .anim-breathe {
   animation: animBreathe 1.5s ease-out infinite normal;
@@ -23,4 +38,11 @@
   100% {
     opacity: 50%;
   }
+}
+
+.row-baseline {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  align-items: center;
 }

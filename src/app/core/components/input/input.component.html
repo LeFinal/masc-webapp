@@ -1,0 +1,5 @@
+<input [defaultValue]="defaultValue ? defaultValue : ''"
+       [placeholder]="hint ? hint : ''"
+       (ngModelChange)="onValueChange($event)"
+       [(ngModel)]="value"
+       type="text">

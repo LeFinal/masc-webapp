@@ -6,12 +6,7 @@ div {
   animation-delay: 900ms;
 }
 
-.disconnected {
-  color: $masc-danger;
-}
-
 .connected {
-  color: $masc-success;
   visibility: visible;
   animation: animFadeOut 1s forwards;
   animation-delay: 500ms;

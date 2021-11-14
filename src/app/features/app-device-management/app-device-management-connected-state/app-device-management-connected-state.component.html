@@ -1,0 +1,8 @@
+<div *ngIf="connected" class="online">
+  <span class="material-icons icon">wifi</span>
+  <div class="label">Online</div>
+</div>
+<div *ngIf="!connected" class="offline">
+  <span class="material-icons icon">wifi_off</span>
+  <div class="label">Offline</div>
+</div>

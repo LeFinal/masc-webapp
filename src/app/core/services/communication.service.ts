@@ -4,6 +4,9 @@ import { MessageContainer, MessageType } from '../messages/container';
 import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 import { TokenDeviceID, TokenRoles, TokenService } from './token.service';
 import { MessageHello } from '../messages/authentication';
+import { getRoleByStr, RoleType } from '../models/acting';
+import { MessageYouAreIn } from '../messages/acting';
+import { MessageError } from '../messages/errors';
 
 export enum CommunicationState {
   Connecting,
@@ -11,6 +14,35 @@ export enum CommunicationState {
   Authenticating,
   Connected,
   Disconnected
+}
+
+/**
+ * Events used by job events from {@link CommunicationService}.
+ *
+ * @author Lennart Altenhof
+ * @version 1.0
+ */
+export interface JobEvent {
+  /**
+   * The actor id the job event is for.
+   */
+  actorId: string;
+  /**
+   * The role the job event is for when hired.
+   */
+  roleType?: RoleType;
+  /**
+   * Whether the job is now active (hired) or inactive (fired).
+   */
+  hired: boolean;
+}
+
+export interface ErrorEvent {
+  code: string;
+  kind: string;
+  error: string;
+  message: string;
+  details: object;
 }
 
 /**
@@ -24,10 +56,15 @@ export enum CommunicationState {
 })
 export class CommunicationService {
 
+  private deviceId?: string;
+
   private messages$ = new ReplaySubject<MessageContainer<object>>();
   private communicationState = new BehaviorSubject<CommunicationState>(CommunicationState.Disconnected);
+  private jobEvents$ = new ReplaySubject<JobEvent>();
+  private errors$ = new ReplaySubject<ErrorEvent>();
 
   constructor(private connectionService: ConnectionService, private tokenService: TokenService) {
+    this.deviceId = tokenService.getItem(TokenDeviceID);
     connectionService.getConnectionState().subscribe(s => this.handleConnectionStateChange(s));
     connectionService.getMessages().subscribe(m => this.handleMessage(m));
   }
@@ -46,6 +83,35 @@ export class CommunicationService {
     return this.messages$.asObservable();
   }
 
+  /**
+   * Returns an observable for all received errors.
+   */
+  getErrors(): Observable<ErrorEvent> {
+    return this.errors$.asObservable();
+  }
+
+  /**
+   * Returns an observable for {@link JobEvent}s.
+   */
+  getJobEvents(): Observable<JobEvent> {
+    return this.jobEvents$.asObservable();
+  }
+
+  /**
+   * Sends the given message over the connection.
+   * @param message The message to send.
+   */
+  sendMessage(message: MessageContainer<object>): void {
+    if (!this.deviceId) {
+      console.error('cannot send message with device id not being set');
+      return;
+    }
+    this.connectionService.sendMessage({
+      device_id: this.deviceId,
+      ...message,
+    });
+  }
+
   private handleMessage(message: MessageContainer<object>): void {
     switch (message.message_type) {
       case MessageType.Welcome:
@@ -53,13 +119,42 @@ export class CommunicationService {
           console.error('no device id received');
           return;
         }
-        this.tokenService.setItem(TokenDeviceID, message.device_id);
+        this.deviceId = message.device_id;
+        this.tokenService.setItem(TokenDeviceID, this.deviceId);
         this.communicationState.next(CommunicationState.Connected);
         console.log(`authenticated with device id ${ message.device_id }`);
         break;
-      case MessageType.Error:
-        console.error(message);
+      case MessageType.YouAreIn:
+        const messageYouAreIn: MessageYouAreIn = message.content as MessageYouAreIn;
+        this.jobEvents$.next({
+          actorId: messageYouAreIn.actor_id,
+          roleType: getRoleByStr(messageYouAreIn.role),
+          hired: true,
+        });
         break;
+      case MessageType.Fired:
+        if (!message.actor_id) {
+          console.error('got fired message without actor id');
+          break;
+        }
+        this.jobEvents$.next({
+          actorId: message.actor_id,
+          hired: false,
+        });
+        break;
+      case MessageType.Error:
+        const messageError: MessageError = message.content as MessageError;
+        console.error(message);
+        this.errors$.next({
+          code: messageError.code,
+          kind: messageError.kind,
+          error: messageError.err,
+          message: messageError.message,
+          details: messageError.details,
+        });
+        break;
+      default:
+        this.messages$.next(message);
     }
   }
 
@@ -105,6 +200,6 @@ export class CommunicationService {
     if (!rolesStr) {
       console.error('no roles set');
     }
-    return []; // TODO;
+    return []; // TODO: Navigate to set-roles?
   }
 }

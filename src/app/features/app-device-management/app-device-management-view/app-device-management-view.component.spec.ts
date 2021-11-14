@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppDeviceManagementViewComponent } from './app-device-management-view.component';
+import { AppDeviceManagementView } from './app-device-management-view.component';
 
 describe('AppDeviceManagementViewComponent', () => {
-  let component: AppDeviceManagementViewComponent;
-  let fixture: ComponentFixture<AppDeviceManagementViewComponent>;
+  let component: AppDeviceManagementView;
+  let fixture: ComponentFixture<AppDeviceManagementView>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppDeviceManagementViewComponent ]
+      declarations: [ AppDeviceManagementView ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppDeviceManagementViewComponent);
+    fixture = TestBed.createComponent(AppDeviceManagementView);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,12 @@
+<div class="modal" [ngClass]="styleClassFromCode(color)">
+  <div class="modal-content">
+    <div class="modal-body">
+      <h2>{{ title ? title : 'Confirm' }}</h2>
+      <p>{{ prompt ? prompt : 'Do you really want to perform this action?' }}</p>
+    </div>
+    <div class="modal-footer">
+      <app-button (click)="close()">Cancel</app-button>
+      <app-button (click)="confirm()" [color]="color">Confirm</app-button>
+    </div>
+  </div>
+</div>

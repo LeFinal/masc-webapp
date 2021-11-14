@@ -1,6 +1,6 @@
-<button type="button"
-        class="clickable"
+<button [disabled]="disabled"
         [ngClass]="[styleClassFromCode(color)]"
-        [disabled]="disabled">
+        [type]=type
+        class="clickable">
   <ng-content></ng-content>
 </button>
