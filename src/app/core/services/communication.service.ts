@@ -112,6 +112,13 @@ export class CommunicationService {
     });
   }
 
+  /**
+   * Returns the assigned/saved device id.
+   */
+  getDeviceID(): string | undefined {
+    return this.deviceId;
+  }
+
   private handleMessage(message: MessageContainer<object>): void {
     switch (message.message_type) {
       case MessageType.Welcome:

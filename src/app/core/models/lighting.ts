@@ -121,3 +121,19 @@ export function getFixtureTypeName(ft: FixtureType): string {
       return 'Dimmer';
   }
 }
+
+/**
+ * Fixture offer used with {@link MessageOfferedFixtures}.
+ *
+ * @version 1.0
+ */
+export interface OfferedFixture {
+  /**
+   * The provider id.
+   */
+  id: string;
+  /**
+   * The fixture type.
+   */
+  type: FixtureType;
+}

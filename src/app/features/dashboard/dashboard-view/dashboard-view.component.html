@@ -11,5 +11,10 @@
                        description="Manage, name and remove fixtures."
                        icon="batch_prediction"
                        [routerLink]="['/app/fixture-management']"></app-dashboard-app>
+    <app-dashboard-app *ngIf="hasRoleType(roleType.FixtureProvider)"
+                       title="Test Fixture Provider"
+                       description="Monitor test fixture states."
+                       icon="model_training"
+                       [routerLink]="['/app/test-fixture-provider']"></app-dashboard-app>
   </div>
 </div>

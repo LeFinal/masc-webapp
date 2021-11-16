@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RoleType } from '../../models/acting';
+import { getRoleTypeName, RoleType } from '../../models/acting';
 
 /**
  * Displays the {@link RoleType} with an icon and human-readable name.
@@ -21,5 +21,12 @@ export class RoleTypeComponent {
       return true;
     }
     return !Object.values(RoleType).includes(this.rt);
+  }
+
+  getRoleTypeName(rt?: RoleType): string {
+    if (!rt) {
+      return 'no role type set';
+    }
+    return getRoleTypeName(rt);
   }
 }

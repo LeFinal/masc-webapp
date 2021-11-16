@@ -1,0 +1,27 @@
+@import "src/styles/view";
+@import "src/styles/util";
+
+.fixtures {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.fixture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: $masc-layout solid 1px;
+  border-radius: 8px;
+  padding: 0.5em;
+  gap: 0.5em;
+}
+
+.fixture-enabled-state {
+  font-size: 3em;
+
+  &.fixture-enabled-state--enabled {
+    color: $masc-fixture-enabled;
+  }
+}

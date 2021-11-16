@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverURL: 'ws://localhost:8080/ws',
+  serverURL: 'ws://192.168.3.2:8080/ws',
   useMocks: false,
   version: require('../../package.json').version + '-dev',
 };

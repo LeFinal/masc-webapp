@@ -1,4 +1,4 @@
-import { Fixture } from '../models/lighting';
+import { Fixture, OfferedFixture } from '../models/lighting';
 
 /**
  * Message content for {@link MessageType.FixtureList}.
@@ -35,4 +35,52 @@ export interface MessageDeleteFixture {
    * The id of the fixture to delete.
    */
   fixture_id: number;
+}
+
+/**
+ * Message content for {@link MessageType.FixtureOffers}.
+ *
+ * @version 1.0
+ */
+export interface MessageFixtureOffers {
+  /**
+   * Our own device id. This is only used for association. Don't do bs with that!
+   */
+  device_id: string;
+  /**
+   * The offered fixtures.
+   */
+  fixtures: OfferedFixture[];
+}
+
+/**
+ * Message content for {@link MessageType.FixtureBasicState}.
+ *
+ * @version 1.0
+ */
+export interface MessageFixtureBasicState {
+  /**
+   * The provider id.
+   */
+  fixture: string;
+  /**
+   * Whether the fixture is enabled or not.
+   */
+  is_enabled: boolean;
+  /**
+   * Whether the fixture is in locating-mode.
+   */
+  is_locating: boolean;
+}
+
+/**
+ * Message content for {@link MessageType.FixtureDimmerState}.
+ *
+ * @version 1.0
+ */
+export interface MessageFixtureDimmerState extends MessageFixtureBasicState {
+  /**
+   * The brightness the dimmer should use.
+   */
+  brightness: number;
 }

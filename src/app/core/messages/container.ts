@@ -36,12 +36,12 @@ export enum MessageType {
    * FixtureBasicSetState is used for setting the state of
    * FixtureTypeBasic.
    */
-  FixtureBasicSetState = 'fixture-basic-set-state',
+  FixtureBasicState = 'fixture-basic-state',
   /**
    * FixtureDimmerSetState is used for setting the state of
    * FixtureTypeDimmer.
    */
-  FixtureDimmerSetState = 'fixture-dimmer-set-state',
+  FixtureDimmerState = 'fixture-dimmer-state',
   /**
    * Used with {@link MessageFixtureList} as list of fixtures as an answer to {@link GetFixtures}.
    */
@@ -51,10 +51,13 @@ export enum MessageType {
    */
   GetDevices = 'get-devices',
   /**
-   * GetFixtures is sent to the client for requesting all available
-   * fixtures he offers.
+   * Sent to the server for requesting all known fixtures.
    */
   GetFixtures = 'get-fixtures',
+  /**
+   * Received from server for requesting offered fixtures.
+   */
+  GetFixtureOffers = 'get-fixture-offers',
   /**
    * Hello is received with MessageHello for saying hello to the
    * server.
@@ -74,7 +77,7 @@ export enum MessageType {
    * Fixtures provides all available fixtures from a fixture provider.
    * Used with MessageFixtures.
    */
-  OfferedFixtures = 'offered-fixtures',
+  FixtureOffers = 'fixture-offers',
   /**
    * PlayerJoin is used for joining a player for a match.
    */

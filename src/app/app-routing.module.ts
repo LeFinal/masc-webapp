@@ -9,6 +9,7 @@ import { NotFoundView } from './features/error-handling/not-found-view/not-found
 import { AppDeviceManagementView } from './features/app-device-management/app-device-management-view/app-device-management-view.component';
 import { CommonModule } from '@angular/common';
 import { AppFixtureManagementView } from './features/app-fixture-management/app-fixture-management-view/app-fixture-management-view.component';
+import { AppTestFixtureProviderView } from './features/app-test-fixture-provider/app-test-fixture-provider-view/app-test-fixture-provider-view.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
           {
             path: 'fixture-management',
             component: AppFixtureManagementView,
+          },
+          {
+            path: 'test-fixture-provider',
+            component: AppTestFixtureProviderView,
           },
         ],
       },

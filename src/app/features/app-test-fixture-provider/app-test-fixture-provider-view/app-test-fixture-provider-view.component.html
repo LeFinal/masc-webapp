@@ -1,0 +1,24 @@
+<div class="view-full">
+  <h1>Test fixtures</h1>
+  <h2>Basic fixtures</h2>
+  <div class="fixtures">
+    <div *ngFor="let f of fixtureBasicStates" class="fixture">
+      <span *ngIf="f.is_enabled"
+            class="fixture-enabled-state fixture-enabled-state--enabled  material-icons">circle</span>
+      <span *ngIf="!f.is_enabled" class="fixture-enabled-state  material-icons">radio_button_unchecked</span>
+      <span>Fixture: {{ f.fixture }}</span>
+      <span>Locating: {{ f.is_locating }}</span>
+    </div>
+  </div>
+  <h2>Dimmer fixtures</h2>
+  <div class="fixtures">
+    <div *ngFor="let f of fixtureDimmerStates" class="fixture">
+      <span *ngIf="f.is_enabled"
+            class="fixture-enabled-state fixture-enabled-state--enabled material-icons">circle</span>
+      <span *ngIf="!f.is_enabled" class="fixture-enabled-state  material-icons">radio_button_unchecked</span>
+      <span>Fixture: {{ f.fixture }}</span>
+      <span>Locating: {{ f.is_locating }}</span>
+      <span>Brightness: {{ f.brightness }}</span>
+    </div>
+  </div>
+</div>

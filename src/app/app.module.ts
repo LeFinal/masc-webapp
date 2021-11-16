@@ -9,6 +9,9 @@ import { ConnectionService } from './core/services/connection.service';
 import { CommunicationService } from './core/services/communication.service';
 import { CommonModule } from '@angular/common';
 import { defaultSimpleModalOptions, SimpleModalModule } from 'ngx-simple-modal';
+import { RoleDeviceManagerService } from './core/services/role-device-manager.service';
+import { RoleFixtureManagerService } from './core/services/role-fixture-manager.service';
+import { RoleFixtureProviderService } from './core/services/role-fixture-provider.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { defaultSimpleModalOptions, SimpleModalModule } from 'ngx-simple-modal';
   providers: [
     ConnectionService,
     CommunicationService,
+    RoleDeviceManagerService,
+    RoleFixtureManagerService,
+    RoleFixtureProviderService,
   ],
   bootstrap: [AppComponent],
 })

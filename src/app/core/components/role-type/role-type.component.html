@@ -1,11 +1,15 @@
 <ng-container [ngSwitch]="rt">
   <div *ngSwitchCase="roleType.DeviceManager" class="role">
     <span class="material-icons">devices</span>
-    <div class="name">Device Manager</div>
+    <div class="name">{{ getRoleTypeName(rt) }}</div>
   </div>
   <div *ngSwitchCase="roleType.FixtureManager" class="role">
     <span class="material-icons">batch_prediction</span>
-    <div class="name">Fixture Manager</div>
+    <div class="name">{{ getRoleTypeName(rt) }}</div>
+  </div>
+  <div *ngSwitchCase="roleType.FixtureOperator" class="role">
+    <span class="material-icons">batch_prediction</span>
+    <div class="name">{{ getRoleTypeName(rt) }}</div>
   </div>
   <div *ngSwitchDefault class="role">
     <span class="material-icons">help</span>
