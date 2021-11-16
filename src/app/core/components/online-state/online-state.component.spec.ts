@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppDeviceManagementConnectedStateComponent } from './app-device-management-connected-state.component';
+import { OnlineStateComponent } from './online-state.component';
 
 describe('AppDeviceManagementConnectedStateComponent', () => {
-  let component: AppDeviceManagementConnectedStateComponent;
-  let fixture: ComponentFixture<AppDeviceManagementConnectedStateComponent>;
+  let component: OnlineStateComponent;
+  let fixture: ComponentFixture<OnlineStateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppDeviceManagementConnectedStateComponent ]
+      declarations: [ OnlineStateComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppDeviceManagementConnectedStateComponent);
+    fixture = TestBed.createComponent(OnlineStateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

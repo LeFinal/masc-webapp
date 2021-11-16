@@ -2,8 +2,8 @@
   <div class="modal-content">
     <div class="modal-body">
       <h2>Edit device</h2>
-      <app-app-device-management-connected-state [connected]="device.is_connected">
-      </app-app-device-management-connected-state>
+      <app-online-state [online]="device.is_connected">
+      </app-online-state>
       <p>Device ID: {{ device.id }}</p>
       <p>Name: <span *ngIf="device.name" class="style-primary">{{ device.name }}
       </span><span *ngIf="!device.name" class="style-subsidiary">Unknown</span></p>

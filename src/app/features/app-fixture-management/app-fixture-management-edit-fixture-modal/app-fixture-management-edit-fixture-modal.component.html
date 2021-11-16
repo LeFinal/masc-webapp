@@ -1,0 +1,28 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-body">
+      <h2>Edit fixture</h2>
+      <app-online-state [online]="fixture.is_online">
+      </app-online-state>
+      <p>Fixture ID: {{ fixture.id }}</p>
+      <p>Name: <span *ngIf="fixture.name" class="style-primary">{{ fixture.name }}
+      </span><span *ngIf="!fixture.name" class="style-subsidiary">Unknown</span></p>
+      <p>Device ID: {{ fixture.device_id }}</p>
+      <p>Provider ID: {{ fixture.provider_id }}</p>
+      <p>Type: {{ fixture.type }}</p>
+      <p>Last seen: {{ fixture.last_seen | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
+      <p *ngIf="fixture.is_online">Enabled: <span *ngIf="fixture.is_enabled">Yes</span><span
+        *ngIf="!fixture.is_enabled">No</span></p>
+      <p *ngIf="fixture.features">Features:</p>
+      <ng-container *ngIf="fixture.features">
+        <app-fixture-feature *ngFor="let feat of fixture.features"
+                             [ff]="getFixtureFeatureByStr(feat)"></app-fixture-feature>
+      </ng-container>
+    </div>
+    <div class="modal-footer">
+      <app-button (click)="close()">Close</app-button>
+      <app-button (click)="delete()" color="danger">Delete</app-button>
+      <app-button (click)="editName()">Edit Name</app-button>
+    </div>
+  </div>
+</div>

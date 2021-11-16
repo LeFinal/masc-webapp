@@ -8,6 +8,7 @@ import { SetRolesViewComponent } from './features/config/set-roles-view/set-role
 import { NotFoundView } from './features/error-handling/not-found-view/not-found-view.component';
 import { AppDeviceManagementView } from './features/app-device-management/app-device-management-view/app-device-management-view.component';
 import { CommonModule } from '@angular/common';
+import { AppFixtureManagementView } from './features/app-fixture-management/app-fixture-management-view/app-fixture-management-view.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
           {
             path: 'device-management',
             component: AppDeviceManagementView,
+          },
+          {
+            path: 'fixture-management',
+            component: AppFixtureManagementView,
           },
         ],
       },

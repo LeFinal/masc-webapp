@@ -4,6 +4,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { CoreModule } from '../core/core.module';
 import { ConfigModule } from './config/config.module';
 import { AppDeviceManagementModule } from './app-device-management/app-device-management.module';
+import { AppFixtureManagementModule } from './app-fixture-management/app-fixture-management.module';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { AppDeviceManagementModule } from './app-device-management/app-device-ma
     CoreModule,
     DashboardModule,
     AppDeviceManagementModule,
+    AppFixtureManagementModule,
     ConfigModule,
   ],
 })

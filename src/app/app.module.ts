@@ -25,6 +25,7 @@ import { defaultSimpleModalOptions, SimpleModalModule } from 'ngx-simple-modal';
       ...{
         animationDuration: 0,
         closeOnClickOutside: true,
+        closeOnEscape: true,
       },
     }),
   ],

@@ -15,6 +15,10 @@ export enum MessageType {
    */
   DeleteDevice = 'delete-device',
   /**
+   * Used with {@link MessageDeleteFixture} for deleting a fixture.
+   */
+  DeleteFixture = 'delete-fixture',
+  /**
    * DeviceList is used with MessageDeviceList as an answer to
    * GetDevices.
    */
@@ -29,11 +33,6 @@ export enum MessageType {
    */
   Fired = 'fired',
   /**
-   * Fixtures provides all available fixtures from a fixture provider.
-   * Used with MessageFixtures.
-   */
-  Fixtures = 'fixtures',
-  /**
    * FixtureBasicSetState is used for setting the state of
    * FixtureTypeBasic.
    */
@@ -43,6 +42,10 @@ export enum MessageType {
    * FixtureTypeDimmer.
    */
   FixtureDimmerSetState = 'fixture-dimmer-set-state',
+  /**
+   * Used with {@link MessageFixtureList} as list of fixtures as an answer to {@link GetFixtures}.
+   */
+  FixtureList = 'fixture-list',
   /**
    * GetDevices is received when devices are requested.
    */
@@ -67,6 +70,11 @@ export enum MessageType {
    * detailed response.
    */
   OK = 'ok',
+  /**
+   * Fixtures provides all available fixtures from a fixture provider.
+   * Used with MessageFixtures.
+   */
+  OfferedFixtures = 'offered-fixtures',
   /**
    * PlayerJoin is used for joining a player for a match.
    */
@@ -115,6 +123,10 @@ export enum MessageType {
    * with MessageRequestRoleAssignments.
    */
   RequestRoleAssignments = 'request-role-assignments',
+  /**
+   * Used with {@link MessageSetFixtureName} for updating the name of a fixture.
+   */
+  SetFixtureName = 'set-fixture-name',
   /**
    * RoleAssignments is used with MessageRoleAssignments for when an
    * assignment request was fulfilled.

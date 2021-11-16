@@ -14,6 +14,8 @@ import { RefreshButtonComponent } from './components/refresh-button/refresh-butt
 import { ButtonComponent } from './components/button/button.component';
 import { InputComponent } from './components/input/input.component';
 import { ConfirmModal } from './components/modals/confirm-modal/confirm-modal.component';
+import { OnlineStateComponent } from './components/online-state/online-state.component';
+import { FixtureFeatureComponent } from './components/fixture-feature/fixture-feature.component';
 
 
 @NgModule({
@@ -29,8 +31,10 @@ import { ConfirmModal } from './components/modals/confirm-modal/confirm-modal.co
     RoleTypeComponent,
     RoleTypeComponent,
     RefreshButtonComponent,
+    OnlineStateComponent,
     InputComponent,
     ConfirmModal,
+    FixtureFeatureComponent,
   ],
   exports: [
     LogoComponent,
@@ -38,6 +42,8 @@ import { ConfirmModal } from './components/modals/confirm-modal/confirm-modal.co
     ButtonComponent,
     RoleTypeComponent,
     RefreshButtonComponent,
+    OnlineStateComponent,
+    FixtureFeatureComponent,
   ],
   imports: [
     CommonModule,

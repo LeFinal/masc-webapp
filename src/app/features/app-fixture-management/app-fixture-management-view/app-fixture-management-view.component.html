@@ -1,0 +1,27 @@
+<div class="view-full">
+  <h1>Fixture Management</h1>
+  Manage, rename and forget fixtures.
+  <h2>Known Fixtures</h2>
+  <app-refresh-button (click)="refreshFixtures()"></app-refresh-button>
+  <ng-container *ngIf="fixtureList">
+    <table class="table-basic" aria-label="Fixture list">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Last seen</th>
+        <th scope="col">Status</th>
+      </tr>
+      <tr (click)="editFixture(fixture)"
+          *ngFor="let fixture of fixtureList"
+          class="clickable-layout">
+        <td>{{ fixture.name }}</td>
+        <td>{{ getFixtureTypeName(fixture.type) }}</td>
+        <td>{{ fixture.last_seen | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>
+          <app-online-state [online]="fixture.is_online">
+          </app-online-state>
+        </td>
+      </tr>
+    </table>
+  </ng-container>
+</div>

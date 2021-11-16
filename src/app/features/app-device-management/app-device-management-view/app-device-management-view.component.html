@@ -9,7 +9,7 @@
         <th scope="col">Name</th>
         <th scope="col">Self description</th>
         <th scope="col">Last seen</th>
-        <th scope="col">Connected?</th>
+        <th scope="col">Status</th>
       </tr>
       <tr (click)="editDevice(device)"
           *ngFor="let device of deviceList"
@@ -18,8 +18,8 @@
         <td>{{ device.self_description }}</td>
         <td>{{ device.last_seen | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
         <td>
-          <app-app-device-management-connected-state [connected]="device.is_connected">
-          </app-app-device-management-connected-state>
+          <app-online-state [online]="device.is_connected">
+          </app-online-state>
         </td>
       </tr>
     </table>

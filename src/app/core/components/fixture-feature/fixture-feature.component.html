@@ -1,0 +1,14 @@
+<ng-container [ngSwitch]="ff">
+  <div *ngSwitchCase="fixtureFeature.Dimmer" class="feature">
+    <span class="material-icons">lightbulb</span>
+    <div class="name">Dimmer</div>
+  </div>
+  <div *ngSwitchDefault class="feature">
+    <span class="material-icons">help</span>
+    <div class="name">
+      <span *ngIf="isUnknown()">Unknown </span>
+      <span *ngIf="!isUnknown()">Missing visualization </span>
+      <span class="style-subsidiary">({{ ff }})</span>
+    </div>
+  </div>
+</ng-container>

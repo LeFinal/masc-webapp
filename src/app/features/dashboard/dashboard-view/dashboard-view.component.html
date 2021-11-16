@@ -6,5 +6,10 @@
                        description="Manage, name and remove devices."
                        icon="devices"
                        [routerLink]="['/app/device-management']"></app-dashboard-app>
+    <app-dashboard-app *ngIf="hasRoleType(roleType.FixtureManager)"
+                       title="Fixture Management"
+                       description="Manage, name and remove fixtures."
+                       icon="batch_prediction"
+                       [routerLink]="['/app/fixture-management']"></app-dashboard-app>
   </div>
 </div>

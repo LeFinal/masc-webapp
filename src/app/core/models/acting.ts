@@ -6,6 +6,7 @@
 export enum RoleType {
   DeviceManager = 'device-manager',
   FixtureManager = 'fixture-manager',
+  FixtureOperator = 'fixture-operator',
 }
 
 /**
@@ -18,6 +19,8 @@ export function getRoleTypeName(rt: RoleType): string {
       return 'Device Manager';
     case RoleType.FixtureManager:
       return 'Fixture Manager';
+    case RoleType.FixtureOperator:
+      return 'Fixture Operator';
   }
 }
 
@@ -27,6 +30,8 @@ export function getRoleByStr(roleStr: string): RoleType {
       return RoleType.DeviceManager;
     case RoleType.FixtureManager:
       return RoleType.FixtureManager;
+    case RoleType.FixtureOperator:
+      return RoleType.FixtureOperator;
     default:
       console.error(`unknown role type: ${ roleStr }`);
       return RoleType.FixtureManager;
