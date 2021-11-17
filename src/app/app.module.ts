@@ -12,6 +12,7 @@ import { defaultSimpleModalOptions, SimpleModalModule } from 'ngx-simple-modal';
 import { RoleDeviceManagerService } from './core/services/role-device-manager.service';
 import { RoleFixtureManagerService } from './core/services/role-fixture-manager.service';
 import { RoleFixtureProviderService } from './core/services/role-fixture-provider.service';
+import { RoleFixtureOperatorService } from './core/services/role-fixture-operator.service';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { RoleFixtureProviderService } from './core/services/role-fixture-provide
     RoleDeviceManagerService,
     RoleFixtureManagerService,
     RoleFixtureProviderService,
+    RoleFixtureOperatorService,
   ],
   bootstrap: [AppComponent],
 })

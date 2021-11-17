@@ -47,17 +47,25 @@ export enum MessageType {
    */
   FixtureList = 'fixture-list',
   /**
+   * Received from server by {@link RoleType.FixtureOperator}.
+   */
+  FixtureStates = 'fixture-states',
+  /**
    * GetDevices is received when devices are requested.
    */
   GetDevices = 'get-devices',
+  /**
+   * Received from server for requesting offered fixtures.
+   */
+  GetFixtureOffers = 'get-fixture-offers',
   /**
    * Sent to the server for requesting all known fixtures.
    */
   GetFixtures = 'get-fixtures',
   /**
-   * Received from server for requesting offered fixtures.
+   * Sent to the server by {@link RoleType.FixtureOperator} for requesting fixture states.
    */
-  GetFixtureOffers = 'get-fixture-offers',
+  GetFixtureStates = 'get-fixture-states',
   /**
    * Hello is received with MessageHello for saying hello to the
    * server.
@@ -130,6 +138,14 @@ export enum MessageType {
    * Used with {@link MessageSetFixtureName} for updating the name of a fixture.
    */
   SetFixtureName = 'set-fixture-name',
+  /**
+   * Used with {@link MessageSetFixturesEnabled} for setting the enabled-state for fixtures.
+   */
+  SetFixturesEnabled = 'set-fixtures-enabled',
+  /**
+   * Used with {@link MessageSetFixturesLocating} for setting the locating-mode for fixtures.
+   */
+  SetFixturesLocating = 'set-fixtures-locating',
   /**
    * RoleAssignments is used with MessageRoleAssignments for when an
    * assignment request was fulfilled.

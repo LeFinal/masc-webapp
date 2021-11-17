@@ -1,0 +1,17 @@
+<div (click)="toggleEnabled()" *ngIf="fixtureState" class="card clickable-layout">
+  <div [ngClass]="{'enabled-indicator--enabled': fixtureState.is_enabled}" class="enabled-indicator">
+    <div class="enabled-indicator-icon"></div>
+    <div class="enabled-indicator-text">
+      <span *ngIf="fixtureState.is_enabled">on</span>
+      <span *ngIf="!fixtureState.is_enabled">off</span>
+    </div>
+  </div>
+  <span class="fixture-name">{{ fixtureState.name }}</span>
+  <div [ngClass]="{'actions--disabled': !fixtureState.is_enabled}" class="actions">
+    <div (click)="toggleLocating($event)"
+         [ngClass]="{'action--active': fixtureState.is_locating}"
+         class="action clickable-layout">
+      <span class="material-icons">my_location</span>
+    </div>
+  </div>
+</div>

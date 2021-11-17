@@ -1,6 +1,11 @@
 <div class="view-full">
   <h1>Apps</h1>
   <div class="apps">
+    <app-dashboard-app *ngIf="hasRoleType(roleType.FixtureOperator)"
+                       title="Fixture Operation"
+                       description="Turn fixtures on/off and operate them."
+                       icon="online_prediction"
+                       [routerLink]="['/app/fixture-operation']"></app-dashboard-app>
     <app-dashboard-app *ngIf="hasRoleType(roleType.DeviceManager)"
                        title="Device Management"
                        description="Manage, name and remove devices."

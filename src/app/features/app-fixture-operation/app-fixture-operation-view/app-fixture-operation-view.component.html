@@ -1,0 +1,12 @@
+<div class="view-full">
+  <h1>Fixture Operation</h1>
+  <h2>Fixtures</h2>
+  <div class="fixtures">
+    <app-app-fixture-operation-fixture *ngFor="let fixtureState of onlineFixtureStates"
+                                       [fixtureState]="fixtureState"
+                                       (enabledChange)="setFixtureEnabled(fixtureState.id, $event)"
+                                       (locatingChange)="setFixtureLocating(fixtureState.id, $event)">
+    </app-app-fixture-operation-fixture>
+  </div>
+  <div class="fixtures-offline"><span>{{ fixtureStates.length - onlineFixtureStates.length }} offline</span></div>
+</div>

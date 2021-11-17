@@ -6,6 +6,7 @@ import { ConfigModule } from './config/config.module';
 import { AppDeviceManagementModule } from './app-device-management/app-device-management.module';
 import { AppFixtureManagementModule } from './app-fixture-management/app-fixture-management.module';
 import { AppTestFixtureProviderModule } from './app-test-fixture-provider/app-test-fixture-provider.module';
+import { AppFixtureOperationModule } from './app-fixture-operation/app-fixture-operation.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { AppTestFixtureProviderModule } from './app-test-fixture-provider/app-te
     AppDeviceManagementModule,
     AppFixtureManagementModule,
     AppTestFixtureProviderModule,
+    AppFixtureOperationModule,
     ConfigModule,
   ],
 })

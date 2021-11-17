@@ -1,0 +1,14 @@
+@import "src/styles/view";
+@import "src/styles/util";
+
+.fixtures {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.fixtures-offline {
+  margin-top: 1em;
+  color: $masc-subsidiary;
+}

@@ -1,4 +1,4 @@
-import { Fixture, OfferedFixture } from '../models/lighting';
+import { Fixture, FixtureState, OfferedFixture } from '../models/lighting';
 
 /**
  * Message content for {@link MessageType.FixtureList}.
@@ -83,4 +83,63 @@ export interface MessageFixtureDimmerState extends MessageFixtureBasicState {
    * The brightness the dimmer should use.
    */
   brightness: number;
+}
+
+/**
+ * Message content for {@link MessageType.FixtureStates}.
+ *
+ * @version 1.0
+ */
+export interface MessageFixtureStates {
+  fixtures: FixtureState[];
+}
+
+/**
+ * Used in {@link MessageSetFixturesEnabled}.
+ *
+ * @version 1.0
+ */
+export interface FixtureEnabledState {
+  /**
+   * The fixture to set the enabled-state for.
+   */
+  fixture_id: number;
+  /**
+   * The new enabled-state.
+   */
+  is_enabled: boolean;
+}
+
+/**
+ * Message content for {@link MessageType.SetFixturesEnabled}.
+ *
+ * @version 1.0
+ */
+export interface MessageSetFixturesEnabled {
+  fixtures: FixtureEnabledState[];
+}
+
+/**
+ * Used in {@link MessageSetFixturesLocating}.
+ *
+ * @version 1.0
+ */
+export interface FixtureLocatingMode {
+  /**
+   * The fixture to set the locating-mode for.
+   */
+  fixture_id: number;
+  /**
+   * The new locating-mode
+   */
+  is_locating: boolean;
+}
+
+/**
+ * Message content for {@link MessageType.SetFixturesLocating}.
+ *
+ * @version 1.0
+ */
+export interface MessageSetFixturesLocating {
+  fixtures: FixtureLocatingMode[];
 }

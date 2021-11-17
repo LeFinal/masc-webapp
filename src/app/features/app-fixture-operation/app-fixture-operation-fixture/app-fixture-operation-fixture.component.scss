@@ -1,0 +1,89 @@
+@import "src/styles/util";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  padding: 0.7em;
+  width: 8em;
+  height: 9.5em;
+  justify-content: space-between;
+  border: $masc-layout solid 1px;
+  border-radius: 8px;
+}
+
+.enabled-indicator {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+
+  .enabled-indicator-icon {
+    height: 3em;
+    width: 3em;
+    border: $masc-layout solid 3px;
+    border-radius: 50%;
+  }
+
+  &.enabled-indicator--enabled .enabled-indicator-icon {
+    background-color: $masc-primary;
+  }
+}
+
+.fixture-name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-weight: bolder;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: $masc-layout-secondary;
+
+  &.actions--disabled {
+    visibility: hidden;
+  }
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: $masc-layout-secondary solid 1px;
+  border-radius: 4px;
+  height: 1.2em;
+  width: 1.2em;
+
+  span {
+    font-size: 1em;
+  }
+
+  &.action--active {
+    color: $masc-primary-contrast;
+    border-color: $masc-primary;
+    background-color: $masc-primary;
+    animation: animActionActive 0.5s infinite;
+  }
+}
+
+@keyframes animActionActive {
+  0% {
+    background-color: $masc-primary;
+  }
+  50% {
+    background-color: $masc-primary-contrast;
+  }
+  100% {
+    background-color: $masc-primary;
+  }
+}

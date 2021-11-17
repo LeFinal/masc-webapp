@@ -4,8 +4,6 @@
  * @author Lennart Altenhof
  * @version 1.0
  */
-import { RoleType } from './acting';
-
 export enum FixtureType {
   /**
    * For fixtures that provide only capabilities of being turned on and off as well as locating mode.
@@ -123,7 +121,7 @@ export function getFixtureTypeName(ft: FixtureType): string {
 }
 
 /**
- * Fixture offer used with {@link MessageOfferedFixtures}.
+ * Fixture offer used with {@link MessageFixtureOffers}.
  *
  * @version 1.0
  */
@@ -136,4 +134,48 @@ export interface OfferedFixture {
    * The fixture type.
    */
   type: FixtureType;
+}
+
+/**
+ * A state of a fixture that is being used by {@link RoleType.FixtureOperator} with {@link MessageFixtureStates}.
+ *
+ * @version 1.0
+ */
+export interface FixtureState {
+  /**
+   * The fixture id.
+   */
+  id: number;
+  /**
+   * The fixture type of the fixture.
+   */
+  fixture_type: FixtureType;
+  /**
+   * The associated device.
+   */
+  device_id: string;
+  /**
+   * How the device itself identifies the fixture.
+   */
+  provider_id: string;
+  /**
+   * Optionally assigned name.
+   */
+  name?: string;
+  /**
+   * Whether the fixture is currently online.
+   */
+  is_online: boolean;
+  /**
+   * Whether the fixture is currently enabled.
+   */
+  is_enabled: boolean;
+  /**
+   * Whether the fixture is currently in locating-mode.
+   */
+  is_locating: boolean;
+  /**
+   * The actual fixture state that depends on the type.
+   */
+  state: object;
 }

@@ -10,6 +10,7 @@
   @extend .clickable;
   background-color: $masc-layout-contrast;
   color: $masc-layout;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .clickable-layout:hover {
