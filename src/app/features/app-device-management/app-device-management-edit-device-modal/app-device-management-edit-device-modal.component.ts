@@ -62,7 +62,7 @@ export class AppDeviceManagementEditDeviceModal extends SimpleModalComponent<App
       defaultValue: this.device.name,
       hint: 'Device name',
     }).subscribe(name => {
-      if (!name) {
+      if (name === undefined) {
         return;
       }
       this.deviceManagerService.setDeviceName(this.device.id, name);

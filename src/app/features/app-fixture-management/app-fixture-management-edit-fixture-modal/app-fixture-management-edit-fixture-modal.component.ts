@@ -70,7 +70,7 @@ export class AppFixtureManagementEditFixtureModal extends SimpleModalComponent<A
       defaultValue: this.fixture.name,
       hint: 'Fixture name',
     }).subscribe(name => {
-      if (!name) {
+      if (name === undefined) {
         return;
       }
       this.fixtureManagerService.setFixtureName(this.fixture.id, name);

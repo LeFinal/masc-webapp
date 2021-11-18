@@ -33,7 +33,7 @@ export class PromptTextInputModal extends SimpleModalComponent<PromptTextInputMo
   }
 
   confirm(): void {
-    if (this.value !== undefined && this.value !== '') {
+    if (this.value !== undefined) {
       this.result = this.value;
     }
     this.close().then();
