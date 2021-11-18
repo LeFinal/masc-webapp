@@ -6,7 +6,10 @@
       <span *ngIf="!fixtureState.is_enabled">off</span>
     </div>
   </div>
-  <span class="fixture-name">{{ fixtureState.name }}</span>
+  <span class="fixture-name" *ngIf="fixtureState.name">{{ fixtureState.name }}</span>
+  <span class="fixture-name fixture-name--unnamed" *ngIf="!fixtureState.name">
+    unknown ({{ fixtureState.fixture_type }})
+  </span>
   <div [ngClass]="{'actions--disabled': !fixtureState.is_enabled}" class="actions">
     <div (click)="toggleLocating($event)"
          [ngClass]="{'action--active': fixtureState.is_locating}"

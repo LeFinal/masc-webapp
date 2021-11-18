@@ -42,6 +42,10 @@
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
+
+  &.fixture-name--unnamed {
+    color: $masc-subsidiary;
+  }
 }
 
 .actions {
