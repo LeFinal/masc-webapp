@@ -8,7 +8,11 @@
     <div class="name">{{ getRoleTypeName(rt) }}</div>
   </div>
   <div *ngSwitchCase="roleType.FixtureOperator" class="role">
-    <span class="material-icons">batch_prediction</span>
+    <span class="material-icons">online_prediction</span>
+    <div class="name">{{ getRoleTypeName(rt) }}</div>
+  </div>
+  <div *ngSwitchCase="roleType.FixtureProvider" class="role">
+    <span class="material-icons">lightbulb</span>
     <div class="name">{{ getRoleTypeName(rt) }}</div>
   </div>
   <div *ngSwitchDefault class="role">
