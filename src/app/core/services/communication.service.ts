@@ -205,7 +205,7 @@ export class CommunicationService {
     const rolesStr = this.tokenService.getItem(TokenRoles);
     // Check if roles set.
     if (!rolesStr) {
-      console.error('no roles set');
+      console.warn('no roles set');
     }
     return []; // TODO: Navigate to set-roles?
   }

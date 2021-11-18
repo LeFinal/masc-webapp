@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { AppFixtureManagementView } from './features/app-fixture-management/app-fixture-management-view/app-fixture-management-view.component';
 import { AppTestFixtureProviderView } from './features/app-test-fixture-provider/app-test-fixture-provider-view/app-test-fixture-provider-view.component';
 import { AppFixtureOperationView } from './features/app-fixture-operation/app-fixture-operation-view/app-fixture-operation-view.component';
+import { NoRolesSetView } from './features/error-handling/no-roles-set-view/no-roles-set-view.component';
 
 const routes: Routes = [
   {
@@ -46,11 +47,15 @@ const routes: Routes = [
         path: 'set-roles',
         component: SetRolesViewComponent,
       },
-      {
-        path: '**',
-        component: NotFoundView,
-      },
     ],
+  },
+  {
+    path: 'no-roles-set',
+    component: NoRolesSetView,
+  },
+  {
+    path: '**',
+    component: NotFoundView,
   },
 ];
 

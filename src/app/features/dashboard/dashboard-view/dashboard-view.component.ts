@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { getRolesFromStr, getRoleTypeName, RoleType } from '../../../core/models/acting';
 import { TokenRoles, TokenService } from '../../../core/services/token.service';
+import { Router } from '@angular/router';
 
 /**
  * The dashboard view with available apps.
@@ -13,7 +14,7 @@ import { TokenRoles, TokenService } from '../../../core/services/token.service';
   templateUrl: './dashboard-view.component.html',
   styleUrls: ['./dashboard-view.component.scss'],
 })
-export class DashboardView {
+export class DashboardView implements OnInit {
 
   getRoleTypeName = getRoleTypeName;
   roleType = RoleType;
@@ -24,8 +25,14 @@ export class DashboardView {
    */
   private roles: RoleType[];
 
-  constructor(tokenService: TokenService) {
+  constructor(tokenService: TokenService, private router: Router) {
     this.roles = getRolesFromStr(tokenService.getItem(TokenRoles));
+  }
+
+  ngOnInit(): void {
+    if (this.roles.length === 0) {
+      this.router.navigate(['no-roles-set']).then();
+    }
   }
 
   hasRoleType(rt: RoleType): boolean {

@@ -16,6 +16,7 @@ import { InputComponent } from './components/input/input.component';
 import { ConfirmModal } from './components/modals/confirm-modal/confirm-modal.component';
 import { OnlineStateComponent } from './components/online-state/online-state.component';
 import { FixtureFeatureComponent } from './components/fixture-feature/fixture-feature.component';
+import { LogoSplashComponent } from './components/logo-splash/logo-splash.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { FixtureFeatureComponent } from './components/fixture-feature/fixture-fe
     InputComponent,
     ConfirmModal,
     FixtureFeatureComponent,
+    LogoSplashComponent,
   ],
   exports: [
     LogoComponent,
@@ -44,6 +46,7 @@ import { FixtureFeatureComponent } from './components/fixture-feature/fixture-fe
     RefreshButtonComponent,
     OnlineStateComponent,
     FixtureFeatureComponent,
+    LogoSplashComponent,
   ],
   imports: [
     CommonModule,
