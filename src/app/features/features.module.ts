@@ -8,6 +8,8 @@ import { AppFixtureManagementModule } from './app-fixture-management/app-fixture
 import { AppTestFixtureProviderModule } from './app-test-fixture-provider/app-test-fixture-provider.module';
 import { AppFixtureOperationModule } from './app-fixture-operation/app-fixture-operation.module';
 import { ErrorHandlingModule } from './error-handling/error-handling.module';
+import { AppLightSwitchManagementModule } from './app-light-switch-management/app-light-switch-management.module';
+import { AppSystemStatusModule } from './app-system-status/app-system-status.module';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { ErrorHandlingModule } from './error-handling/error-handling.module';
     AppFixtureManagementModule,
     AppTestFixtureProviderModule,
     AppFixtureOperationModule,
+    AppLightSwitchManagementModule,
+    AppSystemStatusModule,
     ConfigModule,
   ],
 })

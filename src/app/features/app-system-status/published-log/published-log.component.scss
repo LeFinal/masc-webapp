@@ -1,0 +1,17 @@
+@import "src/styles/corporate";
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100%;
+}
+
+.divider {
+  border-bottom: 1px solid $masc-subsidiary-lighter;
+}
+
+:host {
+  display: block;
+  height: 100%;
+}

@@ -1,4 +1,6 @@
-<label>{{ item.display }}
+<label>
+  <span *ngIf="item.display">{{ item.display }}</span>
+  <span *ngIf="!item.display">&nbsp;</span>
   <input type="checkbox" [(ngModel)]="checked" (change)="onChange(checked)">
   <span class="checkmark"></span>
 </label>

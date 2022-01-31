@@ -19,6 +19,10 @@ export enum MessageType {
    */
   DeleteFixture = 'delete-fixture',
   /**
+   * Used with {@link MessageDeleteLightSwitch} for deleting a light switch.
+   */
+  DeleteLightSwitch = 'delete-light-switch',
+  /**
    * DeviceList is used with MessageDeviceList as an answer to
    * GetDevices.
    */
@@ -67,6 +71,10 @@ export enum MessageType {
    */
   GetFixtureStates = 'get-fixture-states',
   /**
+   * Sent to the server by {@link RoleType.LightSwitchManager} for requesting light switches.
+   */
+  GetLightSwitches = 'get-light-switches',
+  /**
    * Hello is received with MessageHello for saying hello to the
    * server.
    */
@@ -86,6 +94,14 @@ export enum MessageType {
    * Used with MessageFixtures.
    */
   FixtureOffers = 'fixture-offers',
+  /**
+   * Received for {@link RoleType.LightSwitchManager} after requesting light switches via {@link GetLightSwitches}.
+   */
+  LightSwitchList = 'light-switch-list',
+  /**
+   * Used with {@link MessageNextLogEntries} for when new log entries are published.
+   */
+  NextLogEntries = 'next-log-entries',
   /**
    * PlayerJoin is used for joining a player for a match.
    */
@@ -135,6 +151,11 @@ export enum MessageType {
    */
   RequestRoleAssignments = 'request-role-assignments',
   /**
+   * RoleAssignments is used with MessageRoleAssignments for when an
+   * assignment request was fulfilled.
+   */
+  RoleAssignments = 'role-assignments',
+  /**
    * Used with {@link MessageSetFixtureName} for updating the name of a fixture.
    */
   SetFixtureName = 'set-fixture-name',
@@ -147,10 +168,9 @@ export enum MessageType {
    */
   SetFixturesLocating = 'set-fixtures-locating',
   /**
-   * RoleAssignments is used with MessageRoleAssignments for when an
-   * assignment request was fulfilled.
+   * Used with {@link UpdateLightSwitch} by {@link RoleType.LightSwitchManager} for updating a light switch.
    */
-  RoleAssignments = 'role-assignments',
+  UpdateLightSwitch = 'update-light-switch',
   /**
    * Welcome is sent to the client when he is welcomed at the server.
    * Used with MessageWelcome.

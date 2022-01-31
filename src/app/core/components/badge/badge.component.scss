@@ -1,0 +1,41 @@
+@import "src/styles/corporate";
+
+:host > div {
+  border-radius: 4px;
+  padding: 0.2em;
+}
+
+.style-base {
+  background-color: $masc-base;
+  color: $masc-base-contrast;
+}
+
+.style-primary {
+  background-color: $masc-primary;
+  color: $masc-primary-contrast;
+}
+
+.style-secondary {
+  background-color: $masc-secondary;
+  color: $masc-secondary-contrast;
+}
+
+.style-subsidiary {
+  background-color: $masc-subsidiary;
+  color: $masc-base-contrast
+}
+
+.style-success {
+  background-color: $masc-success;
+  color: $masc-base;
+}
+
+.style-warn {
+  background-color: $masc-warn;
+  color: $masc-base;
+}
+
+.style-danger {
+  background-color: $masc-danger;
+  color: $masc-base;
+}

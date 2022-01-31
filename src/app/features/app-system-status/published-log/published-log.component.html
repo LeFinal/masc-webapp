@@ -1,0 +1,8 @@
+<div class="entries" #scrollFrame (scroll)="scrollFrameScroll($event)">
+  <div *ngFor="let logEntry of logEntries; let i = index; last as isLast"
+       #logEntryView>
+    <app-published-log-entry [logEntry]="logEntry"></app-published-log-entry>
+    <!--Divider-->
+    <div *ngIf="!isLast" class="divider"></div>
+  </div>
+</div>

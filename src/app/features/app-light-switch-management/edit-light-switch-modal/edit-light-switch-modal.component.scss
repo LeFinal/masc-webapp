@@ -1,0 +1,13 @@
+@import "src/styles/modals";
+@import "src/styles/forms";
+
+.input {
+  width: 100%;
+}
+
+.assignments {
+  display: flex;
+  flex-direction: column;
+  max-height: 50vh;
+  overflow: auto;
+}

@@ -39,7 +39,6 @@ export interface JobEvent {
 
 export interface ErrorEvent {
   code: string;
-  kind: string;
   error: string;
   message: string;
   details: object;
@@ -154,7 +153,6 @@ export class CommunicationService {
         console.error(message);
         this.errors$.next({
           code: messageError.code,
-          kind: messageError.kind,
           error: messageError.err,
           message: messageError.message,
           details: messageError.details,

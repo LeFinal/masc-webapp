@@ -8,10 +8,18 @@ import { SetRolesViewComponent } from './features/config/set-roles-view/set-role
 import { NotFoundView } from './features/error-handling/not-found-view/not-found-view.component';
 import { AppDeviceManagementView } from './features/app-device-management/app-device-management-view/app-device-management-view.component';
 import { CommonModule } from '@angular/common';
-import { AppFixtureManagementView } from './features/app-fixture-management/app-fixture-management-view/app-fixture-management-view.component';
-import { AppTestFixtureProviderView } from './features/app-test-fixture-provider/app-test-fixture-provider-view/app-test-fixture-provider-view.component';
+import {
+  AppFixtureManagementView,
+} from './features/app-fixture-management/app-fixture-management-view/app-fixture-management-view.component';
+import {
+  AppTestFixtureProviderView,
+} from './features/app-test-fixture-provider/app-test-fixture-provider-view/app-test-fixture-provider-view.component';
 import { AppFixtureOperationView } from './features/app-fixture-operation/app-fixture-operation-view/app-fixture-operation-view.component';
 import { NoRolesSetView } from './features/error-handling/no-roles-set-view/no-roles-set-view.component';
+import {
+  LightSwitchManagementView,
+} from './features/app-light-switch-management/light-switch-management-view/light-switch-management-view.component';
+import { AppSystemStatusView } from './features/app-system-status/app-system-status-view/app-system-status-view.component';
 
 const routes: Routes = [
   {
@@ -40,6 +48,14 @@ const routes: Routes = [
           {
             path: 'test-fixture-provider',
             component: AppTestFixtureProviderView,
+          },
+          {
+            path: 'light-switch-management',
+            component: LightSwitchManagementView,
+          },
+          {
+            path: 'system-status',
+            component: AppSystemStatusView,
           },
         ],
       },

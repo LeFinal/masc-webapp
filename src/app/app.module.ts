@@ -13,6 +13,7 @@ import { RoleDeviceManagerService } from './core/services/role-device-manager.se
 import { RoleFixtureManagerService } from './core/services/role-fixture-manager.service';
 import { RoleFixtureProviderService } from './core/services/role-fixture-provider.service';
 import { RoleFixtureOperatorService } from './core/services/role-fixture-operator.service';
+import { RoleLightSwitchManagerService } from './core/services/role-light-switch-manager.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { RoleFixtureOperatorService } from './core/services/role-fixture-operato
     RoleFixtureManagerService,
     RoleFixtureProviderService,
     RoleFixtureOperatorService,
+    RoleLightSwitchManagerService,
   ],
   bootstrap: [AppComponent],
 })

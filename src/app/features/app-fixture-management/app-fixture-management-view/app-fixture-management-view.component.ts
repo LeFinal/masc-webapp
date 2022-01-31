@@ -3,7 +3,9 @@ import { SubscriptionComponent } from '../../../core/components/subscription-com
 import { SimpleModalService } from 'ngx-simple-modal';
 import { Fixture, getFixtureTypeName } from '../../../core/models/lighting';
 import { RoleFixtureManagerService } from '../../../core/services/role-fixture-manager.service';
-import { AppFixtureManagementEditFixtureModal } from '../app-fixture-management-edit-fixture-modal/app-fixture-management-edit-fixture-modal.component';
+import {
+  AppFixtureManagementEditFixtureModal,
+} from '../app-fixture-management-edit-fixture-modal/app-fixture-management-edit-fixture-modal.component';
 
 /**
  * View for managing fixtures.
@@ -32,8 +34,8 @@ export class AppFixtureManagementView extends SubscriptionComponent {
     super.pushS(this.roleService.getFixtureList().subscribe(list => this.fixtureList = list));
     super.pushS(this.roleService.getOK().subscribe(() => this.refreshFixtures()));
     super.pushS(this.roleService.getHired().subscribe(hired => {
+      this.hired = hired;
       if (hired) {
-        this.hired = true;
         this.refreshFixtures();
       }
     }));

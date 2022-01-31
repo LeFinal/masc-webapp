@@ -12,6 +12,7 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
   styleUrls: ['./input.component.scss'],
 })
 export class InputComponent implements OnChanges {
+  @Input() label?: string;
   @Input() hint?: string;
   @Input() defaultValue?: string;
 

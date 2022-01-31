@@ -1,0 +1,27 @@
+<div class="view-full">
+  <h1>Light Switch Management</h1>
+  Manage, rename and forget light switches.
+  <h2>Known Light Switches</h2>
+  <app-refresh-button (click)="refreshLightSwitches()"></app-refresh-button>
+  <ng-container *ngIf="lightSwitchList">
+    <table class="table-basic" aria-label="Fixture list">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Last seen</th>
+        <th scope="col">Status</th>
+      </tr>
+      <tr (click)="editLightSwitch(lightSwitch)"
+          *ngFor="let lightSwitch of lightSwitchList"
+          class="clickable-layout">
+        <td>{{ lightSwitch.name }}</td>
+        <td>{{ getLightSwitchTypeName(lightSwitch.type) }}</td>
+        <td>{{ lightSwitch.last_seen | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>
+          <app-online-state [online]="lightSwitch.is_online">
+          </app-online-state>
+        </td>
+      </tr>
+    </table>
+  </ng-container>
+</div>

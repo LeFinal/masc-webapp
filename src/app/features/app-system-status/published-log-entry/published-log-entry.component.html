@@ -1,0 +1,25 @@
+<div *ngIf="logEntry"
+     [ngClass]="{
+  'entry-info': logEntry.level === 'info',
+  'entry-warn': logEntry.level === 'warn',
+  'entry-error': logEntry.level === 'error'
+  }"
+     class="entry">
+  <div class="header">
+    <!--Timestamp-->
+    <span class="timestamp badge-lighter segment">{{ logEntry.time | date:'medium' }}</span>
+    <!--Level-->
+    <span class="level badge-lighter segment">{{ logEntry.level | uppercase }}</span>
+    <!--Message-->
+    <span class="message segment">{{ logEntry.message }}</span>
+
+    <span class="topic segment" *ngIf="getTopicField">[{{ getTopicField()?.v }}]</span>
+  </div>
+  <div class="fields">
+    <div *ngFor="let f of getFieldsWithoutTopic()"
+         class="field badge-light segment">
+      <span class="field-key">{{ f.k }}:</span>
+      <span class="field-value">{{ f.v }}</span>
+    </div>
+  </div>
+</div>

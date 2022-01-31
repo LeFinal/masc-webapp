@@ -1,0 +1,23 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-body">
+      <h2>Light Switch Details</h2>
+      <app-online-state [online]="lightSwitch.is_online">
+      </app-online-state>
+      <p>Light Switch ID: {{ lightSwitch.id }}</p>
+      <p>Name: <span *ngIf="lightSwitch.name" class="style-primary">{{ lightSwitch.name }}
+      </span><span *ngIf="!lightSwitch.name" class="style-subsidiary">Unknown</span></p>
+      <p>Device ID: {{ lightSwitch.device_id }}</p>
+      <p>Device Name: <span *ngIf="lightSwitch.device_name">{{ lightSwitch.device_name}}</span>
+        <span *ngIf="!lightSwitch.device_name">Unknown</span></p>
+      <p>Provider ID: {{ lightSwitch.provider_id }}</p>
+      <p>Type: {{ lightSwitch.type }}</p>
+      <p>Last seen: {{ lightSwitch.last_seen | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
+    </div>
+    <div class="modal-footer">
+      <app-button (click)="close()">Close</app-button>
+      <app-button (click)="delete()" color="danger" [disabled]="lightSwitch.is_online">Delete</app-button>
+      <app-button (click)="edit()">Edit</app-button>
+    </div>
+  </div>
+</div>

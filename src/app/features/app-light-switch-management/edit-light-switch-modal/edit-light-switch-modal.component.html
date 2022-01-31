@@ -1,0 +1,36 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-body">
+      <h2>Edit Light Switch</h2>
+      <div class="form">
+        <!--Name-->
+        <app-input (valueChange)="content.name = $event"
+                   [defaultValue]="content.name"
+                   class="input"
+                   hint="Name"
+                   label="Name:"></app-input>
+        <!--Assignments-->
+        <div *ngIf="fixtureList">
+          <div class="form-label">Assignments ({{ content.assignments.length }}):</div>
+          <div class="assignments">
+            <div *ngFor="let fixture of fixtureList">
+              <label>
+                <app-checkbox
+                  (checkedChange)="setAssignedState(fixture.id, $event)"
+                  [checked]="content.assignments.includes(fixture.id)"
+                  [item]="{
+                  display: !fixture.name ? 'Unknown' : fixture.name,
+                  value: fixture.id.toString()
+                }"></app-checkbox>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <app-button (click)="close()">Cancel</app-button>
+      <app-button (click)="save()" type="submit">Confirm</app-button>
+    </div>
+  </div>
+</div>

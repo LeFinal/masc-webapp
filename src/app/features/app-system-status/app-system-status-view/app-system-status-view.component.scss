@@ -1,0 +1,59 @@
+@import "src/styles/corporate";
+
+.column {
+  flex: 1 1 0;
+  height: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: $masc-layout solid 1px;
+  border-radius: 8px;
+  padding: 1em;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+
+  .card-header-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4em;
+  }
+}
+
+.card-title {
+  font-size: 1.3em;
+  margin-bottom: 0.3em;
+}
+
+.card.log {
+  height: 100%;
+
+  .card-content {
+    overflow: auto;
+  }
+
+  .log-autoscroll-disabled {
+    background-color: $masc-secondary;
+    color: $masc-secondary-contrast;
+    border-radius: 4px;
+  }
+
+  .log-keeping {
+    color: $masc-subsidiary
+  }
+}
+
+:host {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  height: 100%;
+}

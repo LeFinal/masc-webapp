@@ -1,4 +1,5 @@
 @import "src/styles/util.scss";
+@import "src/styles/forms.scss";
 
 input {
   border: $masc-layout solid 2px;
@@ -8,4 +9,9 @@ input {
 
 :host {
   display: block;
+}
+
+:host > div {
+  display: flex;
+  flex-direction: column;
 }

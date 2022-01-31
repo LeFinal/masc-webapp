@@ -1,0 +1,20 @@
+<div class="column">
+  in progress
+</div>
+<div class="column">
+  <div class="card log">
+    <div class="card-header">
+      <div class="card-title">Log</div>
+      <div class="card-header-actions">
+        <app-badge *ngIf="!isLogAutoscrollEnabled"
+                   color="secondary"
+                   label="Autoscroll disabled"></app-badge>
+        <div class="log-keeping">Keeping {{ logEntriesToKeep }} messages.</div>
+      </div>
+    </div>
+    <div class="card-content">
+      <app-published-log (autoscrollEnable)="isLogAutoscrollEnabled = $event"
+                         class="log"></app-published-log>
+    </div>
+  </div>
+</div>

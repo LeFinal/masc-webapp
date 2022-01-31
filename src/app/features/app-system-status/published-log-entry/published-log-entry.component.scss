@@ -1,0 +1,80 @@
+@import "src/styles/corporate";
+
+.entry {
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  padding: 0.4em;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4em;
+  align-items: flex-start;
+}
+
+.segment {
+  padding: 0.2em;
+}
+
+.timestamp {
+  white-space: nowrap;
+}
+
+.level {
+  white-space: nowrap;
+}
+
+.message {
+  overflow-wrap: break-word;
+}
+
+.topic {
+  flex-grow: 1;
+  justify-self: flex-end;
+  text-align: end;
+  color: $masc-subsidiary;
+}
+
+.fields {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4em;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3em;
+}
+
+.topic-field {
+  font-weight: bold;
+}
+
+.badge-lighter {
+  background-color: $masc-subsidiary-lighter;
+}
+
+.badge-light {
+  background-color: $masc-subsidiary-light;
+}
+
+.entry-warn {
+  background-color: $masc-warn;
+}
+
+.entry-error {
+  background-color: $masc-danger;
+
+  .message {
+    color: $masc-base-contrast;
+  }
+}
+
+:host {
+  display: block;
+}

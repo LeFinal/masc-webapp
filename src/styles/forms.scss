@@ -1,0 +1,11 @@
+$formElementsGap: 0.75em;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $formElementsGap;
+}
+
+.form-label {
+  margin-bottom: 0.2em;
+}

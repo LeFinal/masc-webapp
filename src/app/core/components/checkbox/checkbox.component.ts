@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
  * Items for {@link CheckboxComponent}.
  */
 export interface CheckboxItem {
-  display: string;
+  display?: string;
   value: string;
 }
 
@@ -36,5 +36,6 @@ export class CheckboxComponent {
 
   onChange(isChecked: boolean): void {
     this.stateChange.next({ isChecked, item: this.item });
+    this.checkedChange.next(isChecked);
   }
 }

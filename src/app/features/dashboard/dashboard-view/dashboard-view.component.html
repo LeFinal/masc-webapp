@@ -2,24 +2,34 @@
   <h1>Apps</h1>
   <div class="apps">
     <app-dashboard-app *ngIf="hasRoleType(roleType.FixtureOperator)"
-                       title="Fixture Operation"
+                       [routerLink]="['/app/fixture-operation']"
                        description="Turn fixtures on/off and operate them."
                        icon="online_prediction"
-                       [routerLink]="['/app/fixture-operation']"></app-dashboard-app>
+                       title="Fixture Operation"></app-dashboard-app>
     <app-dashboard-app *ngIf="hasRoleType(roleType.DeviceManager)"
-                       title="Device Management"
+                       [routerLink]="['/app/device-management']"
                        description="Manage, name and remove devices."
                        icon="devices"
-                       [routerLink]="['/app/device-management']"></app-dashboard-app>
+                       title="Device Management"></app-dashboard-app>
     <app-dashboard-app *ngIf="hasRoleType(roleType.FixtureManager)"
-                       title="Fixture Management"
+                       [routerLink]="['/app/fixture-management']"
                        description="Manage, name and remove fixtures."
                        icon="batch_prediction"
-                       [routerLink]="['/app/fixture-management']"></app-dashboard-app>
+                       title="Fixture Management"></app-dashboard-app>
     <app-dashboard-app *ngIf="hasRoleType(roleType.FixtureProvider)"
-                       title="Test Fixture Provider"
+                       [routerLink]="['/app/test-fixture-provider']"
                        description="Monitor test fixture states."
                        icon="model_training"
-                       [routerLink]="['/app/test-fixture-provider']"></app-dashboard-app>
+                       title="Test Fixture Provider"></app-dashboard-app>
+    <app-dashboard-app *ngIf="hasRoleType(roleType.LightSwitchManager)"
+                       [routerLink]="['/app/light-switch-management']"
+                       description="Manage, assign and forget light switches."
+                       icon="toggle_on"
+                       title="Light Switch Manager"></app-dashboard-app>
+    <app-dashboard-app *ngIf="hasRoleType(roleType.LogMonitor)"
+                       [routerLink]="['/app/system-status']"
+                       description="View the system status."
+                       icon="health_and_safety"
+                       title="System Status"></app-dashboard-app>
   </div>
 </div>
