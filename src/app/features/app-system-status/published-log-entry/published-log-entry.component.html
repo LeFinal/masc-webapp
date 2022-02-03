@@ -13,10 +13,10 @@
     <!--Message-->
     <span class="message segment">{{ logEntry.message }}</span>
 
-    <span class="topic segment" *ngIf="getTopicField">[{{ getTopicField()?.v }}]</span>
+    <span class="topic segment">[{{ logEntry.logger_name }}]</span>
   </div>
   <div class="fields">
-    <div *ngFor="let f of getFieldsWithoutTopic()"
+    <div *ngFor="let f of getFields()"
          class="field badge-light segment">
       <span class="field-key">{{ f.k }}:</span>
       <span class="field-value">{{ f.v }}</span>

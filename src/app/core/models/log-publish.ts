@@ -19,6 +19,10 @@ export interface PublishedLogEntry {
    */
   level: string;
   /**
+   * The name of the logger.
+   */
+  logger_name: string;
+  /**
    * Optional fields.
    */
   fields: Field;

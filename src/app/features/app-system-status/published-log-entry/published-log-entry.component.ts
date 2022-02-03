@@ -19,26 +19,11 @@ interface Field {
 export class PublishedLogEntryComponent {
   @Input() logEntry?: PublishedLogEntry;
 
-  getTopicField(): Field | undefined {
-    if (!this.logEntry) {
-      return undefined;
-    }
-    const topicFieldValue = this.logEntry.fields.topic;
-    if (topicFieldValue === undefined) {
-      return undefined;
-    }
-    return {
-      k: 'topic',
-      v: topicFieldValue,
-    };
-  }
-
-  getFieldsWithoutTopic(): Field[] {
+  getFields(): Field[] {
     if (!this.logEntry) {
       return [];
     }
     return Object.keys(this.logEntry.fields)
-      .filter(k => k !== 'topic')
       .map(k => ({ k, v: this.logEntry?.fields[k] }));
   }
 }
